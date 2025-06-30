@@ -36,11 +36,11 @@ async def start(client, message):
         return 
         
     try:
-        await message.react(emoji=random.choice(REACTIONS), big=True)
+        await message.react(emoji="⚡", big=True)
     except:
         await message.react(emoji="⚡️", big=True)
 
-    d = await client.send_sticker(message.chat.id, random.choice(STICKERS))
+    d = await client.send_sticker(message.chat.id, random.choice(0))
     asyncio.create_task(del_stk(d))
 
     if not await db.is_user_exist(message.from_user.id):
