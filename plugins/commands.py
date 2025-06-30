@@ -36,7 +36,7 @@ async def start(client, message):
         return 
         
     try:
-        await message.react(emoji="⚡", big=True)
+        await message.react(emoji=random.choice(REACTIONS), big=True)
     except:
         await message.react(emoji="⚡️", big=True)
 
